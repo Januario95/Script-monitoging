@@ -1,38 +1,146 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.events-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.table-scroll {
+    max-height: 600px;
+    overflow-y: scroll;
+    border-bottom: 2px solid #ccc;
+}
+#table-events {
+    border-collapse: collapse;
+}
+.non-active-event {
+    background-color: #E4F3F5;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+.active-event {
+    background-color: teal;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+}
+.active-link,
+.refresh-btn button {
+    text-decoration: none;
+    border: none;
+    padding: 5px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    color: black;
+    background-color: #ccc;
+}
+.active-link:active {
+    outline: 2px solid #6DC2DF;
+}
+.refresh-btn button:active {
+
+}
+.circular {
+    border: 8px solid #A1C6DE;
+    border-radius: 50%;
+    border-top: 8px solid #79aec8;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
 }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.show-tag {
+    display: block;
+}
+.hide-tag {
+    display: none;
+}
+
+
+.loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 4px solid #79aec8;
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+
+
+h3 {
+    color: #8F8989;
+}
+
+
+.attendees-div {
+
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    /* font-size: 0.9em; */
+    font-size: 13px;
+    font-family: sans-serif;
+    min-width: 400px;
+}
+.styled-table thead tr {
+    background-color: #FAF5F5;
+    color: #8F8989;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #FAF5F5;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #FAF5F5;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ccc;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #ccc;
+}
+.no-data {
+    text-align: center;
+}
+
